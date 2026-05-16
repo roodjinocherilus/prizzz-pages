@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prizzz — Système mensuel de communication par Banj Media</title>
+  <meta name="description" content="Prizzz est le système mensuel de communication de Banj Media : stratégie, production photo/vidéo, contenu adapté par plateforme, support de distribution et intelligence terrain." />
+  <link rel="canonical" href="https://prizzz.banjmedia.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Prizzz" />
+  <meta property="og:title" content="Prizzz — Branchez votre marque sur le moteur de Banj Media." />
+  <meta property="og:description" content="Stratégie, production, packaging de contenu, distribution et intelligence terrain dans un système mensuel." />
+  <meta property="og:url" content="https://prizzz.banjmedia.com/" />
+  <meta property="og:image" content="https://www.banjmedia.com/assets/social/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  <style>
+    :root {
+      --ink: #071019;
+      --night: #080b2a;
+      --blue: #2917e8;
+      --blue-2: #3b2cff;
+      --blue-3: #6b61ff;
+      --accent: #8f88ff;
+      --white: #ffffff;
+      --soft: #f3f4ff;
+      --line: rgba(255,255,255,.16);
+      --dark-line: rgba(7,16,25,.12);
+      --muted: rgba(255,255,255,.68);
+      --dark-muted: rgba(7,16,25,.62);
+      --shadow: 0 26px 70px rgba(8,11,42,.28);
+      --font-main: "Magistral", "MagistralC", "Eurostile", "Poppins", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--font-main);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+      padding: 14px clamp(20px, 4vw, 64px);
+      background: rgba(8,11,42,.84);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      width: 148px;
+      min-width: 118px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.4vw, 34px);
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--white); }
+    .parent-link {
+      color: rgba(255,255,255,.58);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: var(--white);
+      color: #06101b;
+      box-shadow: 0 14px 40px rgba(41,23,232,.18);
+    }
+    .btn.secondary {
+      border-color: rgba(255,255,255,.26);
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+    .btn.dark {
+      background: var(--night);
+      color: var(--white);
+    }
+
+    .section {
+      padding: clamp(58px, 7vw, 96px) clamp(20px, 4vw, 64px);
+    }
+    .inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: auto;
+      display: grid;
+      align-items: center;
+      padding-top: clamp(54px, 6vw, 78px);
+      padding-bottom: clamp(56px, 6vw, 84px);
+      background:
+        radial-gradient(circle at 80% 18%, rgba(143,136,255,.22), transparent 22%),
+        radial-gradient(circle at 58% 52%, rgba(59,44,255,.48), transparent 32%),
+        linear-gradient(135deg, #090d32 0%, #2211d8 50%, #3126ef 100%);
+      color: var(--white);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.35));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
+      gap: clamp(32px, 5vw, 70px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: var(--font-main);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin-top: 24px;
+      font-size: clamp(38px, 5vw, 70px);
+    }
+    .hero h2 {
+      margin-top: 14px;
+      max-width: 720px;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.12;
+    }
+    .lead {
+      max-width: 710px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(15px, 1.35vw, 18px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 700px;
+      margin-top: 28px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .proof span {
+      padding: 13px 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+    }
+
+    .engine {
+      position: relative;
+      min-height: 430px;
+    }
+    .engine-panel {
+      position: absolute;
+      inset: 10px 0 10px 24px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(5,8,33,.52);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .engine-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(143,136,255,.16), transparent 28%),
+        radial-gradient(circle at 70% 22%, rgba(59,44,255,.28), transparent 22%);
+      pointer-events: none;
+    }
+    .engine-logo {
+      position: absolute;
+      left: 32px;
+      top: 32px;
+      width: 150px;
+      z-index: 2;
+    }
+    .system-stack {
+      position: absolute;
+      inset: 100px 26px 26px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(72px, 1fr);
+      gap: 12px;
+      z-index: 2;
+    }
+    .system-tile {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.18);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.04)),
+        radial-gradient(circle at 80% 20%, rgba(143,136,255,.24), transparent 34%);
+      padding: 18px;
+    }
+    .system-tile strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.1;
+    }
+    .system-tile span {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      color: rgba(255,255,255,.58);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .system-tile::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 10px solid rgba(143,136,255,.25);
+    }
+    .flow-line {
+      position: absolute;
+      left: 50%;
+      top: 96px;
+      bottom: 74px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(143,136,255,.62), transparent);
+      z-index: 1;
+    }
+    .engine-line {
+      position: absolute;
+      right: -28px;
+      top: 70px;
+      width: 128px;
+      height: 128px;
+      border: 18px solid rgba(143,136,255,.38);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .engine-caption {
+      position: absolute;
+      right: 30px;
+      bottom: 38px;
+      z-index: 3;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+
+    .light { background: var(--white); color: var(--ink); }
+    .soft { background: var(--soft); color: var(--ink); }
+    .dark {
+      background: var(--night);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .dark::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 86% 14%, rgba(143,136,255,.13), transparent 23%),
+        radial-gradient(circle at 20% 80%, rgba(59,44,255,.2), transparent 28%);
+      pointer-events: none;
+    }
+    .dark .inner { position: relative; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(300px, .72fr);
+      gap: clamp(24px, 4vw, 56px);
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .section-head h2 {
+      font-size: clamp(30px, 4.4vw, 56px);
+      line-height: 1.08;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--dark-muted);
+      font-size: clamp(15px, 1.45vw, 18px);
+    }
+    .dark .section-head p,
+    .dark .body-copy { color: var(--muted); }
+
+    .body-copy {
+      max-width: 830px;
+      margin: 0;
+      color: var(--dark-muted);
+      font-size: clamp(16px, 1.7vw, 20px);
+    }
+
+    .strong-line {
+      margin-top: 34px;
+      padding: 26px;
+      border-left: 5px solid var(--accent);
+      background: rgba(41,23,232,.06);
+      color: var(--ink);
+      font-size: clamp(20px, 2.7vw, 34px);
+      line-height: 1.12;
+      font-family: var(--font-main);
+      font-weight: 900;
+      line-height: .98;
+    }
+    .dark .strong-line {
+      background: rgba(255,255,255,.08);
+      color: var(--white);
+    }
+
+    .pain-grid,
+    .stat-grid,
+    .system-grid,
+    .platform-grid,
+    .activation-grid,
+    .fit-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .pain-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 34px; }
+    .stat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .system-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .platform-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .activation-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .chip,
+    .stat,
+    .card,
+    .platform,
+    .activation,
+    .fit {
+      border: 1px solid var(--dark-line);
+      background: var(--white);
+    }
+    .chip {
+      padding: 18px 20px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .stat {
+      min-height: 132px;
+      padding: 20px;
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
+      color: var(--white);
+    }
+    .stat strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: var(--font-main);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      line-height: .85;
+    }
+    .stat span {
+      color: rgba(255,255,255,.74);
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .card,
+    .platform,
+    .activation,
+    .fit {
+      min-height: 166px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before,
+    .platform::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 0;
+      width: 44px;
+      height: 4px;
+      background: var(--blue);
+    }
+    .card h3,
+    .platform h3,
+    .activation h3 {
+      font-size: clamp(20px, 2.6vw, 32px);
+      line-height: 1.08;
+    }
+    .card p,
+    .platform p,
+    .activation p,
+    .fit p {
+      margin: 16px 0 0;
+      color: var(--dark-muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 2px solid var(--accent);
+    }
+    .step {
+      min-height: 220px;
+      padding: 24px 20px;
+      border-right: 1px solid rgba(255,255,255,.16);
+    }
+    .step:last-child { border-right: none; }
+    .step span {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .step h3 { font-size: clamp(22px, 3vw, 34px); line-height: 1.08; }
+    .step p { color: var(--muted); }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    .plan {
+      display: flex;
+      flex-direction: column;
+      min-height: 470px;
+      padding: 24px;
+      border: 1px solid var(--dark-line);
+      background: var(--white);
+      box-shadow: 0 18px 50px rgba(7,16,25,.08);
+      position: relative;
+    }
+    .plan.recommended {
+      background: var(--night);
+      color: var(--white);
+      border-color: transparent;
+      transform: translateY(-14px);
+      box-shadow: 0 28px 72px rgba(41,23,232,.28);
+    }
+    .badge {
+      width: max-content;
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #071019;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+    .plan h3 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; }
+    .plan .purpose {
+      min-height: 58px;
+      margin: 14px 0 28px;
+      color: var(--dark-muted);
+    }
+    .plan.recommended .purpose,
+    .plan.recommended li { color: rgba(255,255,255,.72); }
+    .plan ul {
+      display: grid;
+      gap: 12px;
+      margin: 0 0 32px;
+      padding: 0;
+      list-style: none;
+    }
+    .plan li::before {
+      content: "+";
+      margin-right: 10px;
+      color: var(--blue);
+      font-weight: 900;
+    }
+    .plan.recommended li::before { color: var(--accent); }
+    .price {
+      margin-top: auto;
+      padding-top: 28px;
+      border-top: 1px solid var(--dark-line);
+      font-family: var(--font-main);
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 900;
+      line-height: .9;
+    }
+    .plan.recommended .price { border-color: rgba(255,255,255,.16); }
+    .price small {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-main);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      color: var(--dark-muted);
+    }
+    .plan.recommended .price small { color: rgba(255,255,255,.6); }
+    .plan .btn { margin-top: 28px; }
+
+    .activation {
+      min-height: 190px;
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
+      color: var(--white);
+    }
+    .activation p { color: var(--muted); }
+
+    .amplify {
+      display: grid;
+      grid-template-columns: .8fr 1fr;
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+    }
+    .amplify-list {
+      display: grid;
+      gap: 12px;
+    }
+    .amplify-list span {
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: var(--white);
+      font-weight: 900;
+      letter-spacing: .01em;
+    }
+
+    .fit {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px;
+      font-weight: 700;
+    }
+    .fit::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .faq {
+      border-top: 1px solid var(--dark-line);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .faq button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 26px 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: clamp(16px, 1.8vw, 20px);
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq button span:last-child {
+      color: var(--blue);
+      font-size: 32px;
+      line-height: 1;
+    }
+    .faq-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .25s ease;
+    }
+    .faq-panel > div {
+      overflow: hidden;
+    }
+    .faq-panel p {
+      max-width: 780px;
+      margin: 0 0 26px;
+      color: var(--dark-muted);
+      font-size: 17px;
+    }
+    .faq-item.open .faq-panel { grid-template-rows: 1fr; }
+
+    .final {
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(143,136,255,.22), transparent 24%),
+        linear-gradient(135deg, #080b2a, #2917e8);
+      color: var(--white);
+    }
+    .final h2 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(32px, 5vw, 62px);
+      line-height: 1.08;
+    }
+    .final p {
+      max-width: 680px;
+      margin: 24px auto 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(16px, 1.7vw, 20px);
+    }
+    .final .btn { margin-top: 34px; }
+    .starting {
+      margin-top: 24px;
+      color: var(--accent);
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px clamp(20px, 4vw, 64px);
+      background: var(--night);
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .footer a {
+      color: var(--white);
+    }
+
+    @media (max-width: 1040px) {
+      .nav a:not(.btn) { display: none; }
+      .nav .parent-link { display: inline-flex; }
+      .hero-grid,
+      .section-head,
+      .amplify { grid-template-columns: 1fr; }
+      .engine { min-height: 470px; }
+      .pain-grid,
+      .stat-grid,
+      .system-grid,
+      .platform-grid,
+      .activation-grid,
+      .plans,
+      .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .plan.recommended { transform: none; }
+    }
+
+    @media (max-width: 680px) {
+      .header { min-height: 68px; padding: 12px 16px; }
+      .brand { width: 118px; }
+      .nav .parent-link { display: none; }
+      .nav .btn { min-height: 42px; padding: 0 14px; font-size: 10px; }
+      .hero { min-height: auto; }
+      .proof,
+      .pain-grid,
+      .stat-grid,
+      .system-grid,
+      .platform-grid,
+      .activation-grid,
+      .plans,
+      .fit-grid,
+      .timeline { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .engine { min-height: 390px; }
+      .engine-panel { inset: 0; }
+      .engine-logo { width: 150px; left: 22px; top: 24px; }
+      .system-stack { inset: 96px 18px 22px; grid-auto-rows: 94px; gap: 10px; }
+      .section { padding: 66px 18px; }
+      .card, .platform, .activation { min-height: auto; }
+      .step { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Prizzz">
+      <img src="assets/prizzz-logo-white.png" alt="Prizzz" />
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="parent-link" href="../">Banj Media</a>
+      <a href="#definition">Ce que c’est</a>
+      <a href="#plans">Plans</a>
+      <a href="#activations">Activations</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="inner hero-grid">
+        <div>
+          <span class="eyebrow">Produit mensuel Banj Media</span>
+          <h1>Prizzz</h1>
+          <h2>Branchez votre marque sur le moteur de Banj Media.</h2>
+          <p class="lead">Prizzz est le système mensuel de communication de Banj Media : stratégie, production photo/vidéo, contenu adapté par plateforme, support de distribution et intelligence terrain.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic Prizzz</a>
+            <a class="btn secondary" href="#plans">Voir les plans</a>
+          </div>
+          <div class="proof" aria-label="Preuves Banj Media">
+            <span>700K+ audience cumulée</span>
+            <span>250M+ vues lifetime</span>
+            <span>Production mensuelle intégrée</span>
+            <span>Micro-médias + shows</span>
+          </div>
+        </div>
+
+        <div class="engine" aria-label="Système média Banj Media">
+          <div class="engine-line"></div>
+          <div class="engine-panel">
+            <img class="engine-logo" src="assets/prizzz-logo-white.png" alt="" />
+            <div class="flow-line" aria-hidden="true"></div>
+            <div class="system-stack">
+              <div class="system-tile"><strong>Strategy</strong><span>Roadmap + angles</span></div>
+              <div class="system-tile"><strong>Production</strong><span>Shoot + assets</span></div>
+              <div class="system-tile"><strong>Packaging + rollout</strong><span>Adapted by platform</span></div>
+            </div>
+            <div class="engine-caption">Strategy → Production → Distribution</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="definition" class="section light">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Votre marque ne manque pas seulement de contenu.</h2>
+          <p>Elle manque peut-être de système. Beaucoup de marques communiquent par urgence : lancement, événement, campagne, annonce, offre à pousser.</p>
+        </div>
+        <p class="body-copy">Entre ces moments, la présence devient irrégulière et l’audience se refroidit. Quand la communication commence seulement au moment où il faut vendre, mobiliser ou annoncer, la marque arrive déjà tard.</p>
+        <div class="pain-grid">
+          <div class="chip">Présence irrégulière</div>
+          <div class="chip">Production faible</div>
+          <div class="chip">Plateformes mal utilisées</div>
+          <div class="chip">Audience froide</div>
+          <div class="chip">Lancements plus difficiles</div>
+          <div class="chip">Distribution floue</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Banj Media conseille depuis l’exposition réelle au marché.</h2>
+          <p>Nous testons, produisons, publions, lançons et apprenons en temps réel à travers nos médias, shows, campagnes, projets et micro-médias.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><strong>700K+</strong><span>Audience cumulée</span></div>
+          <div class="stat"><strong>250M+</strong><span>Vues lifetime</span></div>
+          <div class="stat"><strong>Micro-médias</strong><span>Écosystème actif</span></div>
+          <div class="stat"><strong>Shows</strong><span>Formats originaux</span></div>
+          <div class="stat"><strong>Créateurs</strong><span>Réseau culturel</span></div>
+          <div class="stat"><strong>Production</strong><span>Capacité intégrée</span></div>
+        </div>
+        <div class="strong-line">Prizzz donne à votre marque accès à l’intelligence terrain derrière la machine Banj Media.</div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Un système mensuel. Pas une suite de posts isolés.</h2>
+          <p>Chaque cycle relie la stratégie, la production, le packaging, la distribution et l’apprentissage terrain.</p>
+        </div>
+        <div class="system-grid">
+          <article class="card"><h3>Stratégie mensuelle</h3><p>Roadmap, priorités, messages, angles et moments à préparer.</p></article>
+          <article class="card"><h3>Production photo/vidéo</h3><p>Shoot day, capture, direction créative et matière visuelle exploitable.</p></article>
+          <article class="card"><h3>Packaging du contenu</h3><p>Design, montage, captions, repurposing et finition par usage.</p></article>
+          <article class="card"><h3>Contenu par plateforme</h3><p>TikTok, Instagram, Facebook et LinkedIn traités selon leur rôle réel.</p></article>
+          <article class="card"><h3>Support de distribution</h3><p>Séquence, rollout, recommandations et rythme de publication.</p></article>
+          <article class="card"><h3>Intelligence terrain</h3><p>Apprentissages issus du marché réel, pas seulement de suppositions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Un démarrage rapide. Un rythme mensuel clair.</h2>
+          <p>Le premier gain arrive vite. Le système, lui, s’installe pour durer.</p>
+        </div>
+        <div class="timeline">
+          <article class="step"><span>01</span><h3>Diagnostic</h3><p>Avant de recommander un plan, nous comprenons votre marque, vos plateformes, vos objectifs et vos moments.</p></article>
+          <article class="step"><span>02</span><h3>Fast Start Sprint</h3><p>Au premier mois : alignement, play de contenu, shoot léger de 2h et premiers assets dès la semaine 1.</p></article>
+          <article class="step"><span>03</span><h3>Système mensuel</h3><p>Chaque mois : planning, production, packaging, rollout, revue et préparation du cycle suivant.</p></article>
+          <article class="step"><span>04</span><h3>Activations</h3><p>Pour les lancements, événements, campagnes et annonces qui exigent plus d’intensité.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Chaque plateforme a un rôle.</h2>
+          <p>Un même message ne doit pas être traité de la même manière partout. Prizzz adapte le contenu selon le comportement réel des plateformes.</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform"><h3>TikTok / Reels</h3><p>Attention, hooks, vitesse, culture et formats courts.</p></article>
+          <article class="platform"><h3>Instagram</h3><p>Autorité visuelle, reels, carousels et preuve sociale.</p></article>
+          <article class="platform"><h3>Facebook</h3><p>Portée locale, communauté, partage et conversation.</p></article>
+          <article class="platform"><h3>LinkedIn</h3><p>Crédibilité, leadership et confiance professionnelle.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="section soft">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Choisissez le niveau d’accompagnement adapté à votre marque.</h2>
+          <p>Momentum est recommandé pour les marques qui veulent installer un vrai rythme sans basculer dans une intensité de campagne permanente.</p>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Base</h3>
+            <p class="purpose">Maintenir la présence avec un système léger et régulier.</p>
+            <ul>
+              <li>1 shoot day</li>
+              <li>10 assets mensuels</li>
+              <li>Stratégie + production + distribution</li>
+            </ul>
+            <div class="price">2 160 USD<small>/ mois</small></div>
+            <a class="btn dark" href="https://form.typeform.com/to/uUZDV7ZQ">Demander diagnostic</a>
+          </article>
+          <article class="plan recommended">
+            <div class="badge">Plan recommandé</div>
+            <h3>Momentum</h3>
+            <p class="purpose">Construire plus de rythme, de volume et de continuité.</p>
+            <ul>
+              <li>1 shoot day</li>
+              <li>16 assets mensuels</li>
+              <li>Packaging renforcé + intelligence plateforme</li>
+            </ul>
+            <div class="price">3 510 USD<small>/ mois</small></div>
+            <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander diagnostic</a>
+          </article>
+          <article class="plan">
+            <h3>Impact</h3>
+            <p class="purpose">Plus forte intensité pour les marques qui doivent accélérer.</p>
+            <ul>
+              <li>2 shoots</li>
+              <li>26 assets mensuels</li>
+              <li>Partenariat de communication intensif</li>
+            </ul>
+            <div class="price">6 210 USD<small>/ mois</small></div>
+            <a class="btn dark" href="https://form.typeform.com/to/uUZDV7ZQ">Diagnostic</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="activations" class="section dark">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Quand le moment compte davantage, Prizzz monte en intensité.</h2>
+          <p>Les plans mensuels créent la base. Les activations ajoutent de la force autour des moments importants.</p>
+        </div>
+        <div class="activation-grid">
+          <article class="activation"><h3>Launch Activation</h3><p>Nouveau produit, service ou initiative.</p></article>
+          <article class="activation"><h3>Event Activation</h3><p>Préparer, couvrir et prolonger la visibilité d’un événement.</p></article>
+          <article class="activation"><h3>Campaign Activation</h3><p>Campagne commerciale ou institutionnelle.</p></article>
+          <article class="activation"><h3>Product Focus</h3><p>Offre ou produit prioritaire à pousser avec plus de clarté.</p></article>
+          <article class="activation"><h3>Announcement</h3><p>Annonce, partenariat, expansion ou milestone.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="inner amplify">
+        <div>
+          <span class="eyebrow">Couche premium</span>
+          <h2>Quand le moment mérite plus de portée, Banj Media peut amplifier.</h2>
+          <p class="body-copy">Banj Media Amplification est une couche premium et sélective qui active la visibilité de l’écosystème Banj Media lorsque l’alignement stratégique et éditorial est fort.</p>
+        </div>
+        <div class="amplify-list" aria-label="Leviers d’amplification">
+          <span>Plateformes Banj Media</span>
+          <span>Micro-médias spécialisés</span>
+          <span>Shows et formats</span>
+          <span>Réseau de créateurs</span>
+          <span>Audience jeune, connectée, culturellement active</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Prizzz est conçu pour les marques qui traitent la communication comme une fonction business.</h2>
+          <p>Prizzz est adapté aux marques qui veulent installer de la régularité, préparer leurs moments importants et éviter l’improvisation permanente.</p>
+        </div>
+        <div class="fit-grid">
+          <div class="fit">Rester visibles chaque mois</div>
+          <div class="fit">Produire du contenu régulièrement</div>
+          <div class="fit">Adapter leur message par plateforme</div>
+          <div class="fit">Préparer leurs lancements, événements et campagnes</div>
+          <div class="fit">Améliorer leur packaging</div>
+          <div class="fit">Éviter l’improvisation permanente</div>
+          <div class="fit">Bénéficier de l’intelligence terrain de Banj Media</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section soft">
+      <div class="inner">
+        <div class="section-head">
+          <h2>Questions fréquentes</h2>
+          <p>Les points essentiels avant de demander un diagnostic Prizzz.</p>
+        </div>
+        <div class="faq">
+          <div class="faq-item open">
+            <button type="button"><span>Qu’est-ce que Prizzz ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>Prizzz est un système mensuel de communication qui relie stratégie, production, packaging de contenu, distribution et intelligence terrain.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Est-ce que Prizzz inclut la production photo/vidéo ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>Oui. Chaque plan inclut un niveau de production mensuelle avec shoot day, capture et préparation des assets nécessaires au cycle.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Qu’est-ce qu’un shoot day ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>C’est une session de production structurée pour capturer la matière photo et vidéo qui sera transformée en contenus mensuels.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Est-ce que Prizzz inclut la publication sur Banj Media ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>Non automatiquement. L’amplification Banj Media est une couche premium et sélective, activée quand l’alignement stratégique et éditorial est fort.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Comment fonctionne le premier mois ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>Le premier mois démarre par un diagnostic, un fast start sprint, un premier shoot léger et les premiers assets dès la semaine 1.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Quelle est la durée minimale d’engagement ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>La durée est confirmée pendant le diagnostic selon le niveau d’accompagnement, les objectifs et le rythme nécessaire.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button"><span>Quel est le prix de départ ?</span><span>+</span></button>
+            <div class="faq-panel"><div><p>Prizzz commence à 2 160 USD par mois avec le plan Base.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final">
+      <div class="inner">
+        <h2>Votre marque doit rester visible entre les moments qui comptent.</h2>
+        <p>Demandez un diagnostic Prizzz pour identifier le niveau d’accompagnement adapté à votre marque.</p>
+        <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic Prizzz</a>
+        <div class="starting">À partir de 2 160 USD / mois</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Prizzz est un produit de Banj Media.</span>
+    <a href="../">Retourner sur banjmedia.com</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".faq-item button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item").forEach((faq) => faq.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      });
+    });
+  </script>
+</body>
+</html>
