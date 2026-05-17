@@ -77,7 +77,7 @@
       gap: clamp(16px, 2vw, 28px);
       color: rgba(255,255,255,.7);
       font-size: 12px;
-      font-weight: 650;
+      font-weight: 520;
       letter-spacing: .01em;
     }
 
@@ -95,8 +95,8 @@
       padding: 0 20px;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-size: 12px;
-      font-weight: 750;
+      font-size: 11.5px;
+      font-weight: 620;
       letter-spacing: .01em;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       white-space: nowrap;
@@ -184,14 +184,15 @@
     }
     h1 {
       margin-top: 22px;
-      font-size: clamp(36px, 4.2vw, 58px);
+      font-size: clamp(34px, 3.8vw, 50px);
+      font-weight: 620;
     }
     .hero h2 {
       margin-top: 16px;
       max-width: 640px;
-      font-size: clamp(24px, 2.6vw, 34px);
-      line-height: 1.16;
-      font-weight: 650;
+      font-size: clamp(21px, 2.05vw, 29px);
+      line-height: 1.22;
+      font-weight: 520;
     }
     .lead {
       max-width: 620px;
@@ -213,7 +214,7 @@
       margin-top: 34px;
       color: rgba(255,255,255,.82);
       font-size: 11.5px;
-      font-weight: 650;
+      font-weight: 520;
       letter-spacing: 0;
     }
     .proof span {
@@ -347,19 +348,23 @@
     .section-head {
       display: grid;
       grid-template-columns: minmax(0, .82fr) minmax(300px, .68fr);
-      gap: clamp(28px, 5vw, 68px);
-      align-items: end;
-      margin-bottom: 46px;
+      gap: clamp(30px, 5vw, 72px);
+      align-items: start;
+      margin-bottom: 38px;
     }
     .section-head h2 {
-      font-size: clamp(28px, 3.4vw, 42px);
-      line-height: 1.12;
-      font-weight: 680;
+      max-width: 760px;
+      font-size: clamp(24px, 2.45vw, 34px);
+      line-height: 1.18;
+      font-weight: 560;
+      letter-spacing: -.012em;
     }
     .section-head p {
       margin: 0;
       color: var(--dark-muted);
-      font-size: clamp(14px, 1.24vw, 16px);
+      font-size: clamp(13.5px, 1.08vw, 15px);
+      line-height: 1.78;
+      font-weight: 430;
     }
     .dark .section-head p,
     .dark .body-copy { color: var(--muted); }
@@ -368,24 +373,27 @@
       max-width: 830px;
       margin: 0;
       color: var(--dark-muted);
-      font-size: clamp(15px, 1.35vw, 17px);
+      font-size: clamp(14px, 1.18vw, 15.5px);
+      line-height: 1.75;
     }
 
     .strong-line {
-      margin-top: 42px;
-      padding: 28px 32px;
-      border-left: 2px solid var(--blue);
-      border-radius: 0 8px 8px 0;
+      margin-top: 34px;
+      padding: 24px 28px;
+      border-left: 1px solid rgba(40,30,216,.5);
+      border-radius: 0 10px 10px 0;
       background: rgba(40,30,216,.045);
       color: var(--ink);
-      font-size: clamp(20px, 2.2vw, 30px);
+      font-size: clamp(17px, 1.45vw, 22px);
       font-family: var(--font-main);
-      font-weight: 680;
-      line-height: 1.12;
+      font-weight: 560;
+      line-height: 1.34;
+      letter-spacing: -.01em;
     }
     .dark .strong-line {
-      background: rgba(255,255,255,.08);
-      color: var(--white);
+      background: rgba(255,255,255,.055);
+      border-left-color: rgba(216,214,255,.38);
+      color: rgba(255,255,255,.92);
     }
 
     .pain-grid,
@@ -418,29 +426,35 @@
       padding: 16px 18px;
       color: var(--blue);
       font-size: 12.5px;
-      font-weight: 720;
+      font-weight: 580;
       letter-spacing: 0;
     }
     .stat {
-      min-height: 118px;
-      padding: 22px;
-      background: rgba(255,255,255,.065);
-      border-color: rgba(255,255,255,.13);
+      min-height: 102px;
+      padding: 21px 22px;
+      background: rgba(255,255,255,.052);
+      border-color: rgba(255,255,255,.11);
+      border-radius: 10px;
       color: var(--white);
     }
     .stat strong {
       display: block;
-      margin-bottom: 12px;
-      color: var(--accent);
+      margin-bottom: 10px;
+      color: rgba(216,214,255,.92);
       font-family: var(--font-main);
-      font-size: clamp(24px, 3.2vw, 38px);
-      line-height: 1;
+      font-size: clamp(21px, 2.15vw, 30px);
+      font-weight: 560;
+      line-height: 1.05;
+      letter-spacing: -.012em;
+    }
+    .stat.word strong {
+      font-size: clamp(19px, 1.82vw, 26px);
     }
     .stat span {
-      color: rgba(255,255,255,.74);
-      font-weight: 680;
-      letter-spacing: .02em;
-      font-size: 12.5px;
+      color: rgba(255,255,255,.66);
+      font-weight: 500;
+      letter-spacing: .01em;
+      font-size: 12px;
     }
 
     .card,
@@ -465,9 +479,9 @@
     .card h3,
     .platform h3,
     .activation h3 {
-      font-size: clamp(18px, 1.8vw, 24px);
-      line-height: 1.16;
-      font-weight: 720;
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.22;
+      font-weight: 590;
     }
     .card p,
     .platform p,
@@ -494,10 +508,10 @@
       margin-bottom: 24px;
       color: var(--accent);
       font-size: 12px;
-      font-weight: 760;
+      font-weight: 600;
       letter-spacing: .03em;
     }
-    .step h3 { font-size: clamp(20px, 2.3vw, 28px); line-height: 1.14; font-weight: 720; }
+    .step h3 { font-size: clamp(18px, 1.75vw, 23px); line-height: 1.2; font-weight: 590; }
     .step p { color: var(--muted); font-size: 13.5px; }
 
     .plans {
@@ -532,10 +546,10 @@
       background: var(--accent);
       color: #071019;
       font-size: 11px;
-      font-weight: 760;
+      font-weight: 600;
       letter-spacing: .01em;
     }
-    .plan h3 { font-size: clamp(26px, 3vw, 36px); line-height: 1.08; font-weight: 760; }
+    .plan h3 { font-size: clamp(23px, 2.25vw, 30px); line-height: 1.16; font-weight: 600; }
     .plan .purpose {
       min-height: 54px;
       margin: 14px 0 24px;
@@ -564,8 +578,8 @@
       padding-top: 24px;
       border-top: 1px solid var(--dark-line);
       font-family: var(--font-main);
-      font-size: clamp(30px, 3vw, 40px);
-      font-weight: 780;
+      font-size: clamp(26px, 2.45vw, 34px);
+      font-weight: 640;
       line-height: 1;
     }
     .plan.recommended .price { border-color: rgba(255,255,255,.16); }
@@ -574,7 +588,7 @@
       margin-top: 8px;
       font-family: var(--font-main);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 520;
       letter-spacing: .02em;
       color: var(--dark-muted);
     }
@@ -605,8 +619,9 @@
       border-radius: 8px;
       background: rgba(255,255,255,.065);
       color: var(--white);
-      font-weight: 680;
+      font-weight: 520;
       letter-spacing: .01em;
+      font-size: 13.5px;
     }
 
     .fit {
@@ -615,8 +630,8 @@
       align-items: center;
       gap: 14px;
       padding: 18px 20px;
-      font-weight: 650;
-      font-size: 13.5px;
+      font-weight: 520;
+      font-size: 13px;
     }
     .fit::before {
       content: "✓";
@@ -630,7 +645,7 @@
       background: var(--blue);
       color: var(--white);
       font-size: 12px;
-      font-weight: 760;
+      font-weight: 600;
     }
 
     .faq {
@@ -650,8 +665,8 @@
       background: transparent;
       color: var(--ink);
       font: inherit;
-      font-size: clamp(15px, 1.55vw, 18px);
-      font-weight: 700;
+      font-size: clamp(14px, 1.28vw, 16px);
+      font-weight: 560;
       text-align: left;
       cursor: pointer;
     }
@@ -684,23 +699,25 @@
       color: var(--white);
     }
     .final h2 {
-      max-width: 780px;
+      max-width: 660px;
       margin: 0 auto;
-      font-size: clamp(28px, 3.8vw, 46px);
-      line-height: 1.12;
-      font-weight: 680;
+      font-size: clamp(24px, 2.75vw, 34px);
+      line-height: 1.22;
+      font-weight: 560;
+      letter-spacing: -.012em;
     }
     .final p {
       max-width: 620px;
       margin: 24px auto 0;
       color: rgba(255,255,255,.78);
-      font-size: clamp(15px, 1.35vw, 17px);
+      font-size: clamp(14px, 1.12vw, 15.5px);
+      line-height: 1.7;
     }
     .final .btn { margin-top: 34px; }
     .starting {
       margin-top: 24px;
       color: var(--accent);
-      font-weight: 720;
+      font-weight: 560;
       letter-spacing: .02em;
       font-size: 13px;
     }
@@ -714,7 +731,7 @@
       border-top: 1px solid rgba(255,255,255,.12);
       color: rgba(255,255,255,.62);
       font-size: 12px;
-      font-weight: 650;
+      font-weight: 500;
     }
     .footer a {
       color: var(--white);
@@ -758,6 +775,8 @@
       .engine-logo { width: 112px; left: 22px; top: 24px; }
       .system-stack { inset: 88px 18px 22px; grid-auto-rows: 82px; gap: 10px; }
       .section { padding: 72px 18px; }
+      .section-head { margin-bottom: 30px; }
+      .strong-line { padding: 22px 20px; }
       .card, .platform, .activation { min-height: auto; }
       .step { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
       .footer { flex-direction: column; align-items: flex-start; }
@@ -775,7 +794,7 @@
       <a href="#plans">Plans</a>
       <a href="#activations">Activations</a>
       <a href="#faq">FAQ</a>
-      <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic</a>
+      <a class="btn primary" href="https://form.typeform.com/to/fcw8U53n">Demander un diagnostic</a>
     </nav>
   </header>
 
@@ -788,7 +807,7 @@
           <h2>Branchez votre marque sur le moteur de Banj Media.</h2>
           <p class="lead">Prizzz est le système mensuel de communication de Banj Media : stratégie, production photo/vidéo, contenu adapté par plateforme, support de distribution et intelligence terrain.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic Prizzz</a>
+            <a class="btn primary" href="https://form.typeform.com/to/fcw8U53n">Demander un diagnostic Prizzz</a>
             <a class="btn secondary" href="#plans">Voir les plans</a>
           </div>
           <div class="proof" aria-label="Preuves Banj Media">
@@ -842,10 +861,10 @@
         <div class="stat-grid">
           <div class="stat"><strong>700K+</strong><span>Audience cumulée</span></div>
           <div class="stat"><strong>250M+</strong><span>Vues lifetime</span></div>
-          <div class="stat"><strong>Micro-médias</strong><span>Écosystème actif</span></div>
-          <div class="stat"><strong>Shows</strong><span>Formats originaux</span></div>
-          <div class="stat"><strong>Créateurs</strong><span>Réseau culturel</span></div>
-          <div class="stat"><strong>Production</strong><span>Capacité intégrée</span></div>
+          <div class="stat word"><strong>Micro-médias</strong><span>Écosystème actif</span></div>
+          <div class="stat word"><strong>Shows</strong><span>Formats originaux</span></div>
+          <div class="stat word"><strong>Créateurs</strong><span>Réseau culturel</span></div>
+          <div class="stat word"><strong>Production</strong><span>Capacité intégrée</span></div>
         </div>
         <div class="strong-line">Prizzz donne à votre marque accès à l’intelligence terrain derrière la machine Banj Media.</div>
       </div>
@@ -914,7 +933,7 @@
               <li>Stratégie + production + distribution</li>
             </ul>
             <div class="price">2 160 USD<small>/ mois</small></div>
-            <a class="btn dark" href="https://form.typeform.com/to/uUZDV7ZQ">Demander diagnostic</a>
+            <a class="btn dark" href="https://form.typeform.com/to/fcw8U53n">Demander diagnostic</a>
           </article>
           <article class="plan recommended">
             <div class="badge">Plan recommandé</div>
@@ -926,7 +945,7 @@
               <li>Packaging renforcé + intelligence plateforme</li>
             </ul>
             <div class="price">3 510 USD<small>/ mois</small></div>
-            <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander diagnostic</a>
+            <a class="btn primary" href="https://form.typeform.com/to/fcw8U53n">Demander diagnostic</a>
           </article>
           <article class="plan">
             <h3>Impact</h3>
@@ -937,7 +956,7 @@
               <li>Partenariat de communication intensif</li>
             </ul>
             <div class="price">6 210 USD<small>/ mois</small></div>
-            <a class="btn dark" href="https://form.typeform.com/to/uUZDV7ZQ">Diagnostic</a>
+            <a class="btn dark" href="https://form.typeform.com/to/fcw8U53n">Diagnostic</a>
           </article>
         </div>
       </div>
@@ -1037,7 +1056,7 @@
       <div class="inner">
         <h2>Votre marque doit rester visible entre les moments qui comptent.</h2>
         <p>Demandez un diagnostic Prizzz pour identifier le niveau d’accompagnement adapté à votre marque.</p>
-        <a class="btn primary" href="https://form.typeform.com/to/uUZDV7ZQ">Demander un diagnostic Prizzz</a>
+        <a class="btn primary" href="https://form.typeform.com/to/fcw8U53n">Demander un diagnostic Prizzz</a>
         <div class="starting">À partir de 2 160 USD / mois</div>
       </div>
     </section>
