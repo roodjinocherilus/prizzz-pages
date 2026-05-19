@@ -16,6 +16,9 @@
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
   <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" />
   <style>
     :root {
       --ink: #08111d;
@@ -23,7 +26,10 @@
       --blue: #281ed8;
       --blue-2: #3329ee;
       --blue-3: #5a52f0;
-      --accent: #d8d6ff;
+      --lavender: #d8d6ff;
+      --lime: #C4FF3C;
+      --lime-deep: #9FE020;
+      --accent: var(--lime);
       --white: #ffffff;
       --soft: #f7f8ff;
       --line: rgba(255,255,255,.12);
@@ -48,6 +54,14 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    ::selection { background: var(--blue); color: var(--white); }
+
     .header {
       position: sticky;
       top: 0;
@@ -58,10 +72,8 @@
       gap: 24px;
       min-height: 68px;
       padding: 10px clamp(22px, 4vw, 56px);
-      background: rgba(7,9,35,.82);
+      background: var(--night);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
     }
 
     .brand {
@@ -164,10 +176,11 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: rgba(255,255,255,.68);
+      color: var(--accent);
       font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .02em;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
     }
     .eyebrow::before {
       content: "";
@@ -380,8 +393,8 @@
     .strong-line {
       margin-top: 34px;
       padding: 24px 28px;
-      border-left: 1px solid rgba(40,30,216,.5);
-      border-radius: 0 10px 10px 0;
+      border-left: 2px solid var(--blue);
+      border-radius: 0 8px 8px 0;
       background: rgba(40,30,216,.045);
       color: var(--ink);
       font-size: clamp(17px, 1.45vw, 22px);
@@ -391,8 +404,7 @@
       letter-spacing: -.01em;
     }
     .dark .strong-line {
-      background: rgba(255,255,255,.055);
-      border-left-color: rgba(216,214,255,.38);
+      background: rgba(255,255,255,.08);
       color: rgba(255,255,255,.92);
     }
 
@@ -440,7 +452,7 @@
     .stat strong {
       display: block;
       margin-bottom: 10px;
-      color: rgba(216,214,255,.92);
+      color: var(--lime);
       font-family: var(--font-main);
       font-size: clamp(21px, 2.15vw, 30px);
       font-weight: 560;
