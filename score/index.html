@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnostic Prizzz — Score de Maturité Communicationnelle</title>
+<meta name="description" content="Évaluez la maturité communicationnelle de votre marque en quelques minutes et découvrez le chemin Prizzz adapté." />
+<link rel="canonical" href="https://prizzz.banjmedia.com/score/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Prizzz" />
+<meta property="og:title" content="Diagnostic Prizzz — votre Score de Maturité Communicationnelle" />
+<meta property="og:description" content="En quelques minutes, obtenez un score clair sur la maturité communicationnelle de votre marque." />
+<meta property="og:url" content="https://prizzz.banjmedia.com/score/" />
+<meta property="og:image" content="https://www.banjmedia.com/assets/social/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any" />
+<link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" />
+<style>
+  :root{
+    --ink:#08111d; --night:#070923; --bg-purple:#17127a;
+    --blue:#281ed8; --blue-2:#3329ee; --blue-3:#5a52f0;
+    --lavender:#d8d6ff; --lime:#C4FF3C; --lime-deep:#9FE020;
+    --accent:var(--lime); --white:#fff; --soft:#f7f8ff;
+    --line:rgba(255,255,255,.12); --line-2:rgba(255,255,255,.22);
+    --muted:rgba(255,255,255,.66); --dim:rgba(255,255,255,.42);
+    --font:"Magistral","MagistralC","Eurostile","Poppins",system-ui,sans-serif;
+    --shadow:0 28px 90px rgba(7,9,35,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font);color:var(--white);line-height:1.6;
+    background:
+      radial-gradient(circle at 78% 12%, rgba(216,214,255,.10), transparent 26%),
+      radial-gradient(circle at 12% 88%, rgba(40,30,216,.20), transparent 30%),
+      linear-gradient(160deg,#070923 0%,#0c0c3a 55%,#17127a 100%);
+    background-attachment:fixed;min-height:100vh;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--blue);color:#fff}
+  button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+  img{display:block;max-width:100%}
+
+  .wrap{max-width:680px;margin:0 auto;padding:24px clamp(18px,5vw,40px) 64px;min-height:100vh;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 22px}
+  .brand{width:108px}
+  .top a{font-size:11px;color:var(--muted);letter-spacing:.04em}
+
+  .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+  h1{font-size:clamp(28px,6vw,42px);font-weight:700;line-height:1.12;letter-spacing:-.02em}
+  h2{font-size:clamp(20px,4.4vw,27px);font-weight:650;line-height:1.18;letter-spacing:-.01em}
+  h3{font-size:15px;font-weight:600}
+  p{color:var(--muted);font-size:15px}
+  .lead{font-size:16px;color:rgba(255,255,255,.8);margin-top:14px}
+
+  .stage{flex:1;display:flex;flex-direction:column;justify-content:center;animation:fade .45s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .hidden{display:none!important}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    min-height:54px;padding:0 22px;border-radius:999px;border:1px solid transparent;
+    font-family:inherit;font-size:14px;font-weight:650;letter-spacing:.01em;cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease,opacity .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .btn.primary{background:var(--lime);color:#08120a;box-shadow:0 16px 40px rgba(196,255,60,.22)}
+  .btn.ghost{background:rgba(255,255,255,.06);color:#fff;border-color:var(--line-2)}
+  .btn.sm{width:auto;min-height:44px;font-size:13px;padding:0 18px}
+  .btnrow{display:flex;gap:12px;margin-top:26px}
+  .btnrow .btn{flex:1}
+  .back{background:none;border:0;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;padding:10px 0;align-self:flex-start}
+  .back:hover{color:#fff}
+
+  .proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .proof span{font-size:11px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:7px;padding:8px 11px}
+
+  .progress{height:5px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;margin:2px 0 8px}
+  .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--lime-deep));border-radius:3px;transition:width .4s ease;width:0}
+  .step-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+
+  .q{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:10px;padding:18px;margin-bottom:14px}
+  .q .qt{font-size:14.5px;font-weight:500;color:#fff;margin-bottom:14px;line-height:1.45}
+  .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+  .scale button{font-family:inherit;cursor:pointer;border:1px solid var(--line-2);background:rgba(255,255,255,.04);
+    color:var(--muted);border-radius:8px;padding:10px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:5px;
+    transition:all .15s ease;min-height:62px;justify-content:center}
+  .scale button .n{font-size:15px;font-weight:700;color:#fff}
+  .scale button .l{font-size:9px;line-height:1.15;text-align:center;letter-spacing:.01em}
+  .scale button:hover{border-color:var(--lime);color:#fff}
+  .scale button[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#08120a}
+  .scale button[aria-pressed="true"] .n,.scale button[aria-pressed="true"] .l{color:#08120a}
+
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px;letter-spacing:.02em}
+  .field input,.field select{width:100%;font-family:inherit;font-size:14px;color:#fff;
+    background:rgba(255,255,255,.05);border:1px solid var(--line-2);border-radius:9px;padding:13px 14px}
+  .field input::placeholder{color:var(--dim)}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .field select option{background:#0c0c3a;color:#fff}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips button{font-family:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--line-2);
+    background:rgba(255,255,255,.04);color:var(--muted);border-radius:999px;padding:9px 14px;transition:all .15s}
+  .chips button[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#08120a;font-weight:600}
+  .moment-extra{margin-top:6px;padding:14px;border:1px dashed var(--line-2);border-radius:9px}
+
+  /* result */
+  .ring-wrap{display:flex;flex-direction:column;align-items:center;text-align:center;margin:6px 0 8px}
+  .ring{position:relative;width:188px;height:188px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .val b{font-size:46px;font-weight:800;line-height:1;color:#fff}
+  .ring .val span{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+  .cat{font-size:clamp(20px,5vw,26px);font-weight:700;margin-top:18px;color:var(--lime)}
+  .interp{margin:10px auto 0;max-width:520px}
+
+  .card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:12px;padding:20px;margin-top:16px}
+  .card>h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:16px;font-weight:700}
+  .bar{margin:12px 0}
+  .bar .bt{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+  .bar .bt b{color:#fff;font-weight:500}
+  .bar .bt span{color:var(--muted)}
+  .track{height:9px;background:rgba(255,255,255,.08);border-radius:5px;overflow:hidden}
+  .track i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--blue-3),var(--lime));width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+  .sw .col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+  .sw .col ul{list-style:none;display:grid;gap:7px}
+  .sw .col li{font-size:13px;color:rgba(255,255,255,.85);display:flex;gap:8px;align-items:flex-start}
+  .sw .col li::before{content:"";width:7px;height:7px;border-radius:50%;margin-top:6px;flex:0 0 7px}
+  .sw .good li::before{background:var(--lime)}
+  .sw .weak li::before{background:var(--blue-3)}
+  .recos{list-style:none;display:grid;gap:10px}
+  .recos li{font-size:14px;color:rgba(255,255,255,.88);display:flex;gap:11px;align-items:flex-start;line-height:1.45}
+  .recos li b{color:var(--lime);font-weight:800}
+  .plan{border:1px solid var(--lime);background:linear-gradient(180deg,rgba(196,255,60,.08),rgba(196,255,60,.02));border-radius:12px;padding:22px;margin-top:16px}
+  .plan .pl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700}
+  .plan .pn{font-size:24px;font-weight:750;margin:6px 0 10px;color:#fff}
+  .plan .pn .activ{color:var(--lime)}
+  .capture{border:1px solid var(--line-2);background:rgba(255,255,255,.05);border-radius:12px;padding:22px;margin-top:18px}
+  .ok{border-color:var(--lime);text-align:center}
+  .ok .big{font-size:15px;font-weight:650;color:var(--lime);margin-bottom:6px}
+  .privacy{font-size:11px;color:var(--dim);margin-top:12px;line-height:1.5}
+  .footer{margin-top:38px;text-align:center;font-size:11px;color:var(--dim)}
+  .footer a{color:var(--muted)}
+  @media(max-width:480px){
+    .grid2{grid-template-columns:1fr}
+    .scale{grid-template-columns:repeat(5,1fr);gap:5px}
+    .scale button{padding:9px 2px;min-height:58px}
+    .scale button .l{font-size:8px}
+    .sw{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img class="brand" src="https://www.banjmedia.com/assets/prizzz-logo-white.png" alt="Prizzz" />
+    <a href="https://prizzz.banjmedia.com/">← Prizzz</a>
+  </div>
+  <main class="stage" id="stage" aria-live="polite"></main>
+  <div class="footer">Diagnostic Prizzz — un produit de <a href="https://www.banjmedia.com/">Banj Media</a></div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — fill these in (see score/apps-script.gs for backend)
+   ============================================================ */
+const CONFIG = {
+  ENDPOINT_URL: "",                                  // Google Apps Script web-app URL (leave "" = no save/email yet)
+  BOOKING_URL : "https://form.typeform.com/to/fcw8U53n", // diagnostic booking link (swap for appointment schedule later)
+  GA4_ID:"", META_PIXEL_ID:"", LINKEDIN_ID:""        // optional; left empty for V1
+};
+
+/* ---------- Content ---------- */
+const SCALE=[
+ {v:0,l:"Pas en place"},{v:1,l:"Rarement"},{v:2,l:"Parfois"},{v:3,l:"Souvent"},{v:4,l:"Systém."}
+];
+const DIMENSIONS=[
+ {key:"strategy",name:"Stratégie",q:[
+  "Notre marque a des priorités de communication claires chaque mois.",
+  "Nous savons quelles offres, campagnes, événements ou messages doivent être mis en avant.",
+  "Notre communication est reliée à des objectifs business, pas seulement à l’activité de publication.",
+  "Nous comprenons ce que notre audience doit entendre avant de faire confiance ou d’acheter.",
+  "Nos contenus ont généralement un appel à l’action ou une étape suivante claire."]},
+ {key:"production",name:"Production",q:[
+  "Nous produisons du contenu photo/vidéo frais chaque mois.",
+  "Nous avons assez de matière visuelle pour créer du contenu régulièrement.",
+  "Notre équipe, nos produits, nos espaces ou nos activités peuvent être captés régulièrement.",
+  "Notre contenu visuel donne à la marque une image active et crédible.",
+  "Nous pouvons produire du contenu avant que les moments urgents arrivent."]},
+ {key:"platform",name:"Plateformes",q:[
+  "Nous adaptons nos contenus différemment pour Instagram, TikTok/Reels, Facebook et LinkedIn.",
+  "Nous savons quelle plateforme sert le mieux la notoriété, la confiance, l’éducation ou la conversion.",
+  "Nous créons des contenus short-form pensés pour capter l’attention.",
+  "Nos posts statiques et carousels sont conçus pour la clarté et l’autorité.",
+  "Nos choix de plateformes correspondent au comportement de notre audience."]},
+ {key:"packaging",name:"Packaging",q:[
+  "Nos contenus ont généralement des hooks forts.",
+  "Nous savons transformer une activité business en plusieurs contenus.",
+  "Nos captions renforcent le message au lieu de simplement décrire le post.",
+  "Nos visuels sont clairs, intentionnels et faciles à comprendre.",
+  "Nos contenus expliquent, persuadent ou construisent la confiance clairement."]},
+ {key:"distribution",name:"Distribution",q:[
+  "Nous publions selon une séquence planifiée, pas seulement quand le contenu est prêt.",
+  "Nous avons un rythme mensuel de publication cohérent.",
+  "Nous réutilisons les contenus entre plateformes avec intention.",
+  "Nous préparons du contenu avant les lancements, campagnes ou événements.",
+  "Nous analysons ce qui a été publié pour ajuster le cycle suivant."]},
+ {key:"moment",name:"Moments",q:[
+  "Nous commençons à communiquer avant un lancement, événement, campagne ou annonce.",
+  "Nous préparons l’audience avant de lui demander d’agir.",
+  "Nous savons quels contenus sont nécessaires avant, pendant et après les moments importants.",
+  "Nous avons un plan pour prolonger la valeur des événements ou campagnes après leur exécution.",
+  "Nos moments importants sont soutenus par la communication, pas précipités par elle."]}
+];
+const CATS=[
+ {max:30,name:"Communication réactive",txt:"Votre marque communique surtout sous pression. Les décisions, la production et la distribution arrivent souvent trop tard pour créer une visibilité stable."},
+ {max:50,name:"Communication fragmentée",txt:"Votre marque a de l’activité, mais le système reste incomplet. Certaines actions existent, mais elles ne s’additionnent pas encore en visibilité continue."},
+ {max:70,name:"Système émergent",txt:"Votre marque dispose déjà de certaines bases, mais la production, le packaging, la distribution ou la préparation des moments importants peuvent devenir plus solides."},
+ {max:85,name:"Communication prête à accélérer",txt:"Votre communication a une base sérieuse. La prochaine étape consiste à augmenter la force, la cohérence, la production et l’impact autour des moments stratégiques."},
+ {max:100,name:"Communication avancée",txt:"Votre système de communication est déjà solide. L’enjeu principal devient l’accélération, l’amplification, l’optimisation et les activations stratégiques."}
+];
+const WEAK_MSG={
+ strategy:"Votre marque a besoin d’une direction de communication plus claire avant d’augmenter le volume.",
+ production:"Votre marque a besoin d’un rythme mensuel de production photo/vidéo plus fiable.",
+ platform:"Votre marque doit mieux adapter ses contenus aux plateformes au lieu de traiter tous les canaux de la même façon.",
+ packaging:"Vos idées doivent être transformées en hooks, formats, visuels, captions et séquences plus fortes.",
+ distribution:"Votre contenu a besoin d’une meilleure séquence de publication, de rollout et de réutilisation.",
+ moment:"Vos lancements, campagnes, événements ou annonces doivent être préparés plus tôt et soutenus avec plus de force."
+};
+const IMPROVE={
+ strategy:"Définir des priorités de communication mensuelles avant de produire.",
+ production:"Installer un rythme de production photo/vidéo plus régulier.",
+ platform:"Adapter le contenu selon le rôle réel de chaque plateforme.",
+ packaging:"Renforcer hooks, visuels et captions pour plus de clarté et d’autorité.",
+ distribution:"Réutiliser le contenu avec une séquence de publication claire.",
+ moment:"Préparer les lancements et campagnes avant les moments urgents."
+};
+const NAMES={strategy:"Stratégie",production:"Production",platform:"Plateformes",packaging:"Packaging",distribution:"Distribution",moment:"Moments"};
+const SECTORS=["Banque / Finance / Assurance","Éducation / Formation","Hôtellerie / Tourisme / Restauration","Santé / Clinique / Bien-être","Immobilier / Construction","Retail / Commerce","Technologie / Startup","ONG / Institution / Développement","Événementiel","Mode / Beauté / Lifestyle","Culture / Divertissement","Services professionnels","Autre"];
+const LOCS=["Port-au-Prince","Zone métropolitaine","Cap-Haïtien","Autre ville en Haïti","Diaspora / International","Plusieurs lieux"];
+const PLATS=["Instagram","TikTok","Facebook","LinkedIn","YouTube","WhatsApp","Site web","Email / Newsletter","Nous communiquons peu actuellement"];
+const MOMENTS=["Lancement de produit / service","Événement","Campagne commerciale","Campagne institutionnelle","Annonce importante","Ouverture / expansion","Recrutement / mobilisation","Aucun moment spécifique","Je ne sais pas encore"];
+const STRAT_MOMENTS=["Lancement de produit / service","Événement","Campagne commerciale","Campagne institutionnelle","Annonce importante","Ouverture / expansion"];
+const PRODNEED=["Oui, absolument","Oui, mais de façon légère","Nous avons déjà beaucoup de matière","Nous ne savons pas encore","Nous voulons surtout stratégie et packaging"];
+const BUDGETS=["Moins de 2 000 USD / mois","2 160 à 3 500 USD / mois","3 510 à 6 000 USD / mois","6 210 USD+ / mois","À déterminer selon la proposition"];
+const COMMIT=["Oui","Oui, si la proposition est claire","Nous préférons commencer par 1 mois","Nous cherchons surtout une intervention ponctuelle"];
+const DECIDE=["Oui, je peux décider","Oui, avec validation d’un associé / comité","Non, je dois présenter à une autre personne","Je coordonne seulement la demande"];
+const TIMING=["Immédiatement","Dans les 2 prochaines semaines","Dans le prochain mois","Dans 2 à 3 mois","Je veux seulement explorer"];
+const SOURCES=["Banj Media Instagram","Banj Media Facebook","LinkedIn","Roodjino Chérilus","WhatsApp","Événement / QR code","Référence","Client actuel de Banj Media","Recherche web","Autre"];
+
+/* ---------- State ---------- */
+const state={answers:{},qual:{platforms:[],moments:[]},contact:{},utm:{},
+  sessionId:(self.crypto&&crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2))};
+let stepIndex=0; // 0 intro,1 primer,2..7 dims,8 qualify,9 result
+const LAST_DIM=2+DIMENSIONS.length-1, QUALIFY=LAST_DIM+1, RESULT=QUALIFY+1;
+
+/* ---------- Utils ---------- */
+const $=s=>document.querySelector(s), stage=()=>document.getElementById("stage");
+function track(ev,data){ (window.dataLayer=window.dataLayer||[]).push({event:ev,...data}); if(window.console)console.debug("[track]",ev,data||""); }
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function captureUTM(){
+  const p=new URLSearchParams(location.search);
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(k=>{const v=p.get(k);if(v)state.utm[k]=v;});
+  state.utm.referrer=document.referrer||"";
+}
+function render(html){const s=stage();s.classList.remove("stage");void s.offsetWidth;s.innerHTML=html;s.classList.add("stage");window.scrollTo(0,0);}
+function go(i){stepIndex=i;draw();}
+
+/* ---------- Screens ---------- */
+function draw(){
+  if(stepIndex===0)return intro();
+  if(stepIndex===1)return primer();
+  if(stepIndex>=2&&stepIndex<=LAST_DIM)return dimension(stepIndex-2);
+  if(stepIndex===QUALIFY)return qualify();
+  if(stepIndex===RESULT)return result();
+}
+function intro(){
+  track("page_view"); track("scorecard_viewed");
+  render(`
+    <span class="eyebrow">Diagnostic Prizzz</span>
+    <h1>Évaluez la maturité communicationnelle de votre marque.</h1>
+    <p class="lead">Découvrez si votre marque dispose du système nécessaire pour transformer ses offres, campagnes, événements, programmes et annonces en visibilité continue, confiance et présence de marché.</p>
+    <div class="btnrow"><button class="btn primary" id="start">Obtenir mon Score Prizzz</button></div>
+    <div class="proof">
+      <span>Powered by Banj Media</span><span>700K+ audience cumulée</span>
+      <span>250M+ vues lifetime</span><span>Micro-médias + shows + créateurs</span>
+    </div>`);
+  $("#start").onclick=()=>{track("scorecard_start");go(1);};
+}
+function primer(){
+  render(`
+    <span class="eyebrow">Avant de commencer</span>
+    <h2>Ce diagnostic mesure 6 dimensions clés de votre communication.</h2>
+    <p class="lead">Stratégie, production, plateformes, packaging, distribution et préparation des moments importants. Comptez environ 4 à 5 minutes.</p>
+    <div class="btnrow">
+      <button class="btn ghost sm" id="b">Retour</button>
+      <button class="btn primary" id="n">Commencer</button>
+    </div>`);
+  $("#b").onclick=()=>go(0); $("#n").onclick=()=>go(2);
+}
+function dimension(di){
+  const d=DIMENSIONS[di], a=state.answers[d.key]||{};
+  const pct=Math.round((di/DIMENSIONS.length)*100);
+  render(`
+    <div class="step-meta"><span>Dimension ${di+1} / ${DIMENSIONS.length}</span><span>${esc(d.name)}</span></div>
+    <div class="progress"><i style="width:${pct}%"></i></div>
+    <h2 style="margin-bottom:18px">${esc(d.name)}</h2>
+    <div id="qs">${d.q.map((q,qi)=>`
+      <div class="q">
+        <div class="qt">${esc(q)}</div>
+        <div class="scale" data-qi="${qi}">
+          ${SCALE.map(s=>`<button type="button" data-v="${s.v}" aria-pressed="${a[qi]===s.v?'true':'false'}">
+            <span class="n">${s.v}</span><span class="l">${s.l}</span></button>`).join("")}
+        </div>
+      </div>`).join("")}</div>
+    <button class="back" id="b">← Retour</button>
+    <div class="btnrow"><button class="btn primary" id="n" ${Object.keys(a).length===5?"":"disabled"}>Continuer</button></div>`);
+  state.answers[d.key]=a;
+  stage().querySelectorAll(".scale").forEach(sc=>{
+    sc.querySelectorAll("button").forEach(btn=>btn.onclick=()=>{
+      const qi=+sc.dataset.qi;a[qi]=+btn.dataset.v;
+      sc.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));
+      btn.setAttribute("aria-pressed","true");
+      $("#n").disabled=Object.keys(a).length!==5;
+    });
+  });
+  $("#b").onclick=()=>go(stepIndex-1);
+  $("#n").onclick=()=>{track("dimension_completed",{dimension:d.key});go(stepIndex+1);};
+}
+function selHTML(id,label,opts){return `<div class="field"><label>${label}</label><select id="${id}"><option value="">— Choisir —</option>${opts.map(o=>`<option>${esc(o)}</option>`).join("")}</select></div>`;}
+function qualify(){
+  const q=state.qual;
+  render(`
+    <div class="step-meta"><span>Dernière étape</span><span>Votre contexte</span></div>
+    <div class="progress"><i style="width:92%"></i></div>
+    <h2 style="margin-bottom:18px">Quelques précisions sur votre marque.</h2>
+    ${selHTML("sector","Secteur",SECTORS)}
+    <div class="grid2">${selHTML("loc","Localisation",LOCS)}<div class="field"><label>Votre rôle</label><input id="role" placeholder="Ex. Fondateur, Resp. communication"/></div></div>
+    <div class="field"><label>Plateformes utilisées</label><div class="chips" id="plats">${PLATS.map(p=>`<button type="button" data-v="${esc(p)}">${esc(p)}</button>`).join("")}</div></div>
+    <div class="field"><label>Avez-vous un moment important à venir ?</label><div class="chips" id="moments">${MOMENTS.map(m=>`<button type="button" data-v="${esc(m)}">${esc(m)}</button>`).join("")}</div>
+      <div id="mx" class="moment-extra hidden"><div class="grid2">
+        <div class="field" style="margin:0"><label>Date / période</label><input id="mdate" placeholder="Ex. Juin 2026"/></div>
+        <div class="field" style="margin:0">${'<label>Importance (1–5)</label><select id="mimp"><option value="">—</option>'+[1,2,3,4,5].map(n=>`<option>${n}</option>`).join("")+'</select>'}</div>
+      </div></div>
+    </div>
+    ${selHTML("prod","Besoin de production photo/vidéo",PRODNEED)}
+    <div class="grid2">${selHTML("budget","Budget mensuel envisagé",BUDGETS)}${selHTML("timing","Démarrage souhaité",TIMING)}</div>
+    <div class="grid2">${selHTML("decide","Autorité de décision",DECIDE)}${selHTML("commit","Engagement min. 3 mois ?",COMMIT)}</div>
+    ${selHTML("source","Comment avez-vous connu Prizzz ?",SOURCES)}
+    <button class="back" id="b">← Retour</button>
+    <div class="btnrow"><button class="btn primary" id="n">Voir mon score</button></div>`);
+  // restore
+  const setSel=(id,v)=>{if(v)$("#"+id).value=v;};
+  setSel("sector",q.sector);setSel("loc",q.loc);setSel("prod",q.prod);setSel("budget",q.budget);
+  setSel("timing",q.timing);setSel("decide",q.decide);setSel("commit",q.commit);setSel("source",q.source);
+  if(q.role)$("#role").value=q.role;
+  const toggleChips=(wrap,arr,single)=>{
+    wrap.querySelectorAll("button").forEach(b=>{
+      if(arr.includes(b.dataset.v))b.setAttribute("aria-pressed","true");
+      b.onclick=()=>{
+        const v=b.dataset.v,on=b.getAttribute("aria-pressed")==="true";
+        if(single){wrap.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));arr.length=0;}
+        if(on&&!single){arr.splice(arr.indexOf(v),1);b.setAttribute("aria-pressed","false");}
+        else{arr.push(v);b.setAttribute("aria-pressed","true");}
+        if(wrap.id==="moments")syncMoment();
+      };
+    });
+  };
+  toggleChips($("#plats"),q.platforms,false);
+  toggleChips($("#moments"),q.moments,false);
+  function syncMoment(){
+    const strategic=q.moments.some(m=>STRAT_MOMENTS.includes(m));
+    $("#mx").classList.toggle("hidden",!strategic);
+  }
+  syncMoment();
+  if(q.mdate)$("#mdate")&&($("#mdate").value=q.mdate);
+  if(q.mimp)$("#mimp")&&($("#mimp").value=q.mimp);
+  $("#b").onclick=()=>{saveQual();go(stepIndex-1);};
+  $("#n").onclick=()=>{saveQual();track("scorecard_completed");go(RESULT);};
+  function saveQual(){
+    q.sector=$("#sector").value;q.loc=$("#loc").value;q.role=$("#role").value.trim();
+    q.prod=$("#prod").value;q.budget=$("#budget").value;q.timing=$("#timing").value;
+    q.decide=$("#decide").value;q.commit=$("#commit").value;q.source=$("#source").value;
+    if($("#mdate"))q.mdate=$("#mdate").value.trim(); if($("#mimp"))q.mimp=$("#mimp").value;
+  }
+}
+
+/* ---------- Scoring + pipeline ---------- */
+const TIERS=["Base","Momentum","Impact","Amplification"];
+function compute(){
+  const dims={};let sum=0;
+  DIMENSIONS.forEach(d=>{
+    const a=state.answers[d.key]||{};
+    const pts=[0,1,2,3,4].reduce((t,i)=>t+(a[i]||0),0);
+    const sc=Math.round(pts/20*100);dims[d.key]=sc;sum+=sc;
+  });
+  const overall=Math.round(sum/DIMENSIONS.length);
+  const cat=CATS.find(c=>overall<=c.max)||CATS[CATS.length-1];
+  const sorted=Object.entries(dims).sort((a,b)=>a[1]-b[1]);
+  const weakest=sorted.slice(0,3).map(x=>x[0]);
+  const strongest=sorted.slice(-2).map(x=>x[0]).reverse();
+
+  // Step 1 — band → allowed set
+  let allowed;
+  if(overall<=30)allowed=["Base","Momentum"];
+  else if(overall<=50)allowed=["Momentum"];
+  else if(overall<=70)allowed=["Momentum","Impact"];
+  else if(overall<=85)allowed=["Impact"];
+  else allowed=["Impact","Amplification"];
+  // Step 2 — weakest picks within allowed
+  const PREF={production:"Base",strategy:"Momentum",platform:"Momentum",distribution:"Momentum",packaging:"Impact",moment:"Momentum"};
+  const pref=PREF[weakest[0]]||"Momentum";
+  let plan;
+  if(allowed.includes(pref))plan=pref;
+  else{
+    const pi=TIERS.indexOf(pref);
+    plan=allowed.slice().sort((a,b)=>Math.abs(TIERS.indexOf(a)-pi)-Math.abs(TIERS.indexOf(b)-pi))[0];
+  }
+  // Step 3 — activation additive
+  const imp=parseInt(state.qual.mimp||"0",10);
+  const hasStrategic=state.qual.moments.some(m=>STRAT_MOMENTS.includes(m));
+  const activation=(hasStrategic&&imp>=4)||weakest[0]==="moment"&&hasStrategic;
+  // Step 4 — budget reskin (presentation only)
+  const FLOOR={Base:2160,Momentum:3510,Impact:6210,Amplification:6210};
+  const CEIL={[BUDGETS[0]]:2000,[BUDGETS[1]]:3500,[BUDGETS[2]]:6000,[BUDGETS[3]]:1e9,[BUDGETS[4]]:null};
+  const ceil=CEIL[state.qual.budget];
+  const budgetConstrained=ceil!=null&&FLOOR[plan]>ceil;
+
+  // Lead quality (internal)
+  const B={[BUDGETS[0]]:-2,[BUDGETS[1]]:2,[BUDGETS[2]]:3,[BUDGETS[3]]:4,[BUDGETS[4]]:1};
+  const U={[TIMING[0]]:4,[TIMING[1]]:3,[TIMING[2]]:2,[TIMING[3]]:1,[TIMING[4]]:0};
+  const D={[DECIDE[0]]:3,[DECIDE[1]]:2,[DECIDE[2]]:1,[DECIDE[3]]:0};
+  const P={[PRODNEED[0]]:3,[PRODNEED[1]]:2,[PRODNEED[2]]:1,[PRODNEED[3]]:1,[PRODNEED[4]]:2};
+  const bS=B[state.qual.budget]??0,uS=U[state.qual.timing]??0,dS=D[state.qual.decide]??0,pS=P[state.qual.prod]??0;
+  let mS=0; if(state.qual.moments.includes("Aucun moment spécifique"))mS=0;
+  else if(state.qual.moments.includes("Je ne sais pas encore"))mS=1;
+  else if(hasStrategic)mS=imp>=4?4:imp>=2?3:imp===1?2:2;
+  const lq=bS+uS+dS+pS+mS;
+  let cat2;
+  if(bS<=-2&&uS===0&&dS<=1)cat2="Low-Fit Lead";
+  else if(bS>=2&&uS>=2&&dS>=2)cat2="Hot Lead";
+  else if(hasStrategic)cat2="Activation Lead";
+  else if(bS>=1)cat2="Qualified Lead";
+  else cat2="Low-Fit Lead";
+
+  return{dims,overall,cat,weakest,strongest,plan,activation,budgetConstrained,
+    leadQuality:lq,leadCategory:cat2,scoreDetail:{bS,uS,dS,pS,mS}};
+}
+
+/* ---------- Result ---------- */
+let R=null;
+function result(){
+  R=compute();
+  track("result_viewed",{score:R.overall,category:R.cat.name,plan:R.plan});
+  const C=2*Math.PI*84;
+  const recos=[...new Set([...R.weakest.map(k=>IMPROVE[k]),IMPROVE.distribution,IMPROVE.strategy])].slice(0,5);
+  const planLabel=R.plan+(R.activation?` <span class="activ">+ Activation</span>`:"");
+  const planCopy=R.budgetConstrained
+    ? "Votre score indique un besoin qui peut nécessiter un accompagnement plus structuré. L’équipe Banj Media analysera vos réponses pour recommander la meilleure option selon vos priorités et votre budget."
+    : "Votre score indique que votre marque bénéficierait d’un système mensuel avec plus de stratégie, plus de packaging, une production régulière et une meilleure logique de distribution.";
+  render(`
+    <span class="eyebrow">Votre Score Prizzz</span>
+    <div class="ring-wrap">
+      <div class="ring">
+        <svg width="188" height="188">
+          <circle cx="94" cy="94" r="84" stroke="rgba(255,255,255,.1)" stroke-width="14" fill="none"/>
+          <circle id="rc" cx="94" cy="94" r="84" stroke="var(--lime)" stroke-width="14" fill="none"
+            stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}"/>
+        </svg>
+        <div class="val"><b id="rn">0</b><span>/ 100</span></div>
+      </div>
+      <div class="cat">${esc(R.cat.name)}</div>
+      <p class="interp">${esc(R.cat.txt)}</p>
+    </div>
+
+    <div class="card"><h3>Détail par dimension</h3>
+      ${DIMENSIONS.map(d=>`<div class="bar"><div class="bt"><b>${esc(d.name)}</b><span>${R.dims[d.key]}/100</span></div>
+        <div class="track"><i data-w="${R.dims[d.key]}"></i></div></div>`).join("")}
+    </div>
+
+    <div class="card"><h3>Forces &amp; priorités</h3>
+      <div class="sw">
+        <div class="col good"><h4>Vos forces</h4><ul>${R.strongest.map(k=>`<li>${esc(NAMES[k])}</li>`).join("")}</ul></div>
+        <div class="col weak"><h4>À renforcer</h4><ul>${R.weakest.map(k=>`<li>${esc(NAMES[k])}</li>`).join("")}</ul></div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.8)">${esc(WEAK_MSG[R.weakest[0]])}</p>
+    </div>
+
+    <div class="card"><h3>Recommandations</h3>
+      <ul class="recos">${recos.map(r=>`<li><b>+</b><span>${esc(r)}</span></li>`).join("")}</ul>
+    </div>
+
+    <div class="plan">
+      <div class="pl">Chemin recommandé</div>
+      <div class="pn">Prizzz ${planLabel}</div>
+      <p>${esc(planCopy)}</p>
+      ${R.activation?`<p style="margin-top:10px;color:rgba(255,255,255,.8);font-size:13px">Votre marque a un moment important à venir. En plus du système mensuel, une activation dédiée peut aider à donner plus de force à ce moment.</p>`:""}
+      <div class="btnrow"><a class="btn primary" id="book" href="${CONFIG.BOOKING_URL}" target="_blank" rel="noopener">Planifier un diagnostic Prizzz</a></div>
+    </div>
+
+    <div class="capture" id="cap">
+      <h3 style="font-size:15px;font-weight:650;margin-bottom:6px">Vous voulez une recommandation personnalisée ?</h3>
+      <p style="margin-bottom:16px">Laissez vos coordonnées et le lien de votre compte — l’équipe Banj Media analyse votre présence réelle et vos réponses, puis vous envoie une recommandation vraiment personnalisée.</p>
+      <div class="grid2">
+        <div class="field" style="margin-bottom:12px"><label>Nom complet</label><input id="c_name" placeholder="Votre nom"/></div>
+        <div class="field" style="margin-bottom:12px"><label>Entreprise / organisation</label><input id="c_co" placeholder="Votre marque"/></div>
+      </div>
+      <div class="grid2">
+        <div class="field" style="margin-bottom:12px"><label>Email</label><input id="c_email" type="email" placeholder="vous@marque.com"/></div>
+        <div class="field" style="margin-bottom:12px"><label>WhatsApp / téléphone</label><input id="c_phone" placeholder="+509 ..."/></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin:2px 0 9px;letter-spacing:.02em">Liens de vos comptes — pour une analyse personnalisée <span style="color:var(--dim)">(au moins un)</span></div>
+      <div class="grid2">
+        <div class="field" style="margin-bottom:12px"><label>Instagram</label><input id="c_ig" placeholder="instagram.com/votremarque"/></div>
+        <div class="field" style="margin-bottom:12px"><label>Facebook</label><input id="c_fb" placeholder="facebook.com/votremarque"/></div>
+      </div>
+      <div class="grid2">
+        <div class="field" style="margin-bottom:12px"><label>X (Twitter)</label><input id="c_x" placeholder="x.com/votremarque"/></div>
+        <div class="field" style="margin-bottom:12px"><label>TikTok</label><input id="c_tiktok" placeholder="tiktok.com/@votremarque"/></div>
+      </div>
+      <div class="grid2">
+        <div class="field" style="margin-bottom:12px"><label>LinkedIn</label><input id="c_linkedin" placeholder="linkedin.com/company/..."/></div>
+        <div class="field" style="margin-bottom:12px"><label>Site web</label><input id="c_website" placeholder="votresite.com"/></div>
+      </div>
+      <div class="btnrow"><button class="btn primary" id="send">Recevoir ma recommandation</button></div>
+    </div>`);
+
+  // animate ring + bars
+  requestAnimationFrame(()=>{
+    const off=C-(R.overall/100)*C;
+    const rc=$("#rc");rc.style.transition="stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1)";rc.style.strokeDashoffset=off;
+    let n=0;const t=setInterval(()=>{n+=Math.ceil(R.overall/28)||1;if(n>=R.overall){n=R.overall;clearInterval(t);}$("#rn").textContent=n;},34);
+    stage().querySelectorAll(".track i").forEach(i=>setTimeout(()=>i.style.width=i.dataset.w+"%",120));
+  });
+  $("#book").onclick=()=>track("booking_clicked",{plan:R.plan});
+  $("#send").onclick=submitLead;
+  sendPayload(); // completion snapshot (same session_id; enriched on email submit via upsert)
+}
+
+/* ---------- Submit ---------- */
+function buildPayload(){
+  return{
+    session_id:state.sessionId,
+    submitted_at:new Date().toISOString(),
+    contact:state.contact, qualification:state.qual, utm:state.utm,
+    answers:state.answers,
+    scores:R?{overall:R.overall,dimensions:R.dims,category:R.cat.name}:null,
+    recommendation:R?{plan:R.plan,activation:R.activation,budget_constrained:R.budgetConstrained,
+      strongest:R.strongest,weakest:R.weakest}:null,
+    lead:R?{quality_score:R.leadQuality,category:R.leadCategory,detail:R.scoreDetail}:null
+  };
+}
+function sendPayload(){
+  const body=buildPayload();
+  if(!CONFIG.ENDPOINT_URL){console.warn("[Prizzz] ENDPOINT_URL not set — payload not sent:",body);return Promise.resolve(false);}
+  return fetch(CONFIG.ENDPOINT_URL,{method:"POST",mode:"no-cors",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)})
+    .then(()=>true).catch(e=>{console.error("[Prizzz] submit failed",e);return false;});
+}
+function submitLead(){
+  const gv=id=>($("#"+id).value||"").trim();
+  const email=gv("c_email");
+  const links={instagram:gv("c_ig"),facebook:gv("c_fb"),x:gv("c_x"),tiktok:gv("c_tiktok"),linkedin:gv("c_linkedin"),website:gv("c_website")};
+  $("#c_email").style.borderColor="";$("#c_ig").style.borderColor="";
+  if(!email||!/.+@.+\..+/.test(email)){$("#c_email").focus();$("#c_email").style.borderColor="var(--blue-3)";return;}
+  if(!Object.values(links).some(v=>v)){$("#c_ig").focus();$("#c_ig").style.borderColor="var(--blue-3)";return;}
+  state.contact={name:gv("c_name"),company:gv("c_co"),
+    email,phone:gv("c_phone"),links,role:state.qual.role||""};
+  track("lead_capture_submitted",{category:R.leadCategory});
+  const cap=$("#cap"); cap.innerHTML=`<div style="text-align:center"><div class="big" style="font-size:15px;font-weight:650;color:var(--lime);margin-bottom:6px">Merci, c’est noté.</div><p>Votre diagnostic est enregistré. L’équipe Banj Media revient vers vous avec une recommandation personnalisée.</p><div class="btnrow"><a class="btn primary" href="${CONFIG.BOOKING_URL}" target="_blank" rel="noopener">Planifier un diagnostic maintenant</a></div></div>`;
+  cap.classList.add("ok");
+  sendPayload();
+}
+
+/* ---------- Init ---------- */
+captureUTM();
+draw();
+</script>
+</body>
+</html>
