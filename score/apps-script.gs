@@ -27,7 +27,7 @@
  * ============================================================================
  */
 
-const NOTIFY_EMAIL = "hello@banjmedia.com"; // <-- CHANGE to your sales inbox
+const NOTIFY_EMAIL = "contact@banjmedia.com"; // sales inbox (lead alerts + reply-to)
 const SHEET_NAME    = "Leads";
 
 const HEADERS = [
@@ -120,7 +120,7 @@ Vous pouvez planifier un diagnostic avec Banj Media :
 https://form.typeform.com/to/fcw8U53n
 
 — Banj Media`;
-  MailApp.sendEmail({ to: email, subject: subject, body: body, name: "Banj Media — Prizzz" });
+  MailApp.sendEmail({ to: email, subject: subject, body: body, name: "Banj Media — Prizzz", replyTo: NOTIFY_EMAIL });
 }
 function notifyTeam_(p) {
   const s = p.scores || {}, r = p.recommendation || {}, c = p.contact || {}, l = p.lead || {};
