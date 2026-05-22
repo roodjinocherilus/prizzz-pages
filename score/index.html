@@ -261,7 +261,20 @@ const LAST_DIM=2+DIMENSIONS.length-1, QUALIFY=LAST_DIM+1, RESULT=QUALIFY+1;
 
 /* ---------- Utils ---------- */
 const $=s=>document.querySelector(s), stage=()=>document.getElementById("stage");
-function track(ev,data){ (window.dataLayer=window.dataLayer||[]).push({event:ev,...data}); if(window.console)console.debug("[track]",ev,data||""); }
+function initAnalytics(){
+  if(!CONFIG.GA4_ID)return;
+  const s=document.createElement("script");s.async=true;
+  s.src="https://www.googletagmanager.com/gtag/js?id="+CONFIG.GA4_ID;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){dataLayer.push(arguments);};
+  gtag("js",new Date());gtag("config",CONFIG.GA4_ID);
+}
+function track(ev,data){
+  (window.dataLayer=window.dataLayer||[]).push({event:ev,...data});
+  if(window.gtag)gtag("event",ev,data||{});
+  if(window.console)console.debug("[track]",ev,data||"");
+}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function captureUTM(){
   const p=new URLSearchParams(location.search);
@@ -579,6 +592,7 @@ function submitLead(){
 
 /* ---------- Init ---------- */
 captureUTM();
+initAnalytics();
 draw();
 </script>
 </body>
